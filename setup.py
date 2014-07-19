@@ -25,7 +25,7 @@ setup(name='ploneconf2014.contenttypes',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
+          'setuptools==0.7.2',
           'plone.api',
           'plone.app.dexterity [grok]',
           'plone.namedfile [blobs]',
