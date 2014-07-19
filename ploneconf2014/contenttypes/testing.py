@@ -5,7 +5,7 @@ This layer is the Test class base.
 
 Check out all tests on this package:
 
-./bin/test -s ploneconf2014.policy --list-tests
+./bin/test -s ploneconf2014.contenttypes --list-tests
 """
 
 from plone.testing.z2 import ZSERVER_FIXTURE, installProduct, uninstallProduct
@@ -25,24 +25,24 @@ class Fixture(Layer):
     def setUpZope(self, app, configurationContext):
 
         # Load ZCML
-        import ploneconf2014.policy
-        self.loadZCML(package=ploneconf2014.policy)
+        import ploneconf2014.contenttypes
+        self.loadZCML(package=ploneconf2014.contenttypes)
         xmlconfig.file(
             'configure.zcml',
-            ploneconf2014.policy,
+            ploneconf2014.contenttypes,
             context=configurationContext
         )
 
         # Install products that use an old-style initialize() function
-        installProduct(app, 'ploneconf2014.policy')
+        installProduct(app, 'ploneconf2014.contenttypes')
 
     def tearDownZope(self, app):
         # Uninstall products installed above
-        uninstallProduct(app, 'ploneconf2014.policy')
+        uninstallProduct(app, 'ploneconf2014.contenttypes')
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
-        applyProfile(portal, 'ploneconf2014.policy:default')
+        applyProfile(portal, 'ploneconf2014.contenttypes:default')
 
 FIXTURE = Fixture()
 
@@ -53,7 +53,7 @@ test cases.
 """
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
-    name="ploneconf2014.policy:Integration"
+    name="ploneconf2014.contenttypes:Integration"
 )
 
 """
@@ -62,5 +62,5 @@ common utility or setup code in here.
 """
 ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(FIXTURE, ZSERVER_FIXTURE),
-    name="ploneconf2014.policy:Acceptance"
+    name="ploneconf2014.contenttypes:Acceptance"
 )

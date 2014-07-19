@@ -22,10 +22,7 @@ The class that tests the installation of a particular product.
 
     def setUp(self):
         self.portal = self.layer['portal']
-        self.qi = self.portal.portal_quickinstaller
-        """
         self.qi = api.portal.get_tool(name='portal_quickinstaller')
-        """
 
     def test_installed(self):
         """
