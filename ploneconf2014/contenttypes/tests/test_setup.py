@@ -44,15 +44,15 @@ This method test that dependencies products are installed of this package.
             "These dependencies are not installed: " + ", ".join(result)
         )
 
-#class UninstallTestCase(unittest.TestCase):
+class UninstallTestCase(unittest.TestCase):
 
-# layer = INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
-# def setUp(self):
-# self.portal = self.layer['portal']
-# setRoles(self.portal, TEST_USER_ID, ['Manager'])
-# self.qi = getattr(self.portal, 'portal_quickinstaller')
-# self.qi.uninstallProducts(products=[PROJECTNAME])
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.qi = getattr(self.portal, 'portal_quickinstaller')
+        self.qi.uninstallProducts(products=[PROJECTNAME])
 
-# def test_uninstalled(self):
-# self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
+    def test_uninstalled(self):
+        self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))

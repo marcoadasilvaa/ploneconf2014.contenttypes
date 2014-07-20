@@ -1,6 +1,18 @@
-Introduction
-============
+Plone Conf 2014 Content Type
+======================
 
-Plone Content type PloneConf2014 demo
+Package para el manejo de tipos de contenidos en Plone 4.3.
 
-This product may contain traces of nuts.
+
+Pruebas
+======================
+
+[![Build Status](https://travis-ci.org/adamculp/api-consumer.svg?branch=master)](https://travis-ci.org/adamculp/api-consumer)
+
+
+Autor(es)
+======================
+
+* Marco Da Silva aka markmarco16
+
+* Leonardo J .Caballero G. aka macagua

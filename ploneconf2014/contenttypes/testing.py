@@ -18,7 +18,7 @@ from plone.app.testing import FunctionalTesting
 from plone.testing import Layer
 from zope.configuration import xmlconfig
 
-class Fixture(Layer):
+class Fixture(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
 
